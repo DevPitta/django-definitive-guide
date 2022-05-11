@@ -1,7 +1,3 @@
-# django_definitive_guide
+# Django Definitive Guide
 
-# In production
-
-# Wait for further informations
-
-# Thanks
+In development. Wait for further informations
