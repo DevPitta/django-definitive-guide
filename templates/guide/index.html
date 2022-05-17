@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Guide</title>
+    {% include 'includes/stylesheets.html' %}
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container-fluid bg-dark-green">
+            <div class="row">
+                
+                <div class="col-md-4 p-4">
+                    <figure>
+                        <a href="https://www.djangoproject.com/" target="_blank"> <img class="image-django" src="https://res.cloudinary.com/devpythonbr/image/upload/v1652749564/media/Django%20Guide/django-logo-negative_fgofom.png" alt="Django Logo"> </a>
+                    </figure>
+                </div>
+                
+                <div class="col-md-4 p-4 text-white text-center">
+                    <h1>DJANGO GUIDE</h1>
+                    <p>By <a class="devpythonbr-link" href="http://www.devpythonbr.com.br/" target="_blank">DevPythonBr</a></p>
+                    <div>
+                        <h2 class="social-medias">
+                            <a href="https://www.instagram.com/devpythonbr/" target="_blank"><i class="bi bi-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/pittaa/" target="_blank"><i class="bi bi-linkedin"></i></a>
+                            <a href="https://github.com/DevPitta" target="_blank"><i class="bi bi-github"></i></a>
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="col-md-4 p-4">
+                    <figure >
+                        <a href="http://www.devpythonbr.com.br/" target="_blank"> <img class="image-devpythonbr" src="https://res.cloudinary.com/devpythonbr/image/upload/v1652747472/media/Django%20Guide/logo_devpythonbr_site_pjqcrk.png" alt="DevPythonBr Logo"> </a>
+                    </figure>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Nav Section -->
+    <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 text-white">
+                    <h2>Basic Guide</h2>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Section -->
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class= "shadow-lg p-3 mb-5 bg-white rounded">
+                    <div class="col-md-12 pt-2 text-center">
+                        <h1>Start and Deploy</h1>
+                    </div>
+                    <div class="col-md-12 pt-1 text-start">
+                        <h2>Aim</h2>
+                        <ul>
+                            <li>Show objectively the construction of a webapp with Django, Git, Github, PostgreSQL and Heroku.</li>
+                        </ul>    
+                        <h2>Prerequisites</h2>
+                            <ul>
+                                <li>Do you have to know at least the basics of:</li>
+                                <ul>
+                                    <li>Python</li>
+                                    <li>Git</li>
+                                    <li>Github</li>
+                                </ul>
+                            </ul>
+                        <h2>Github Repository</h2>
+                            <ol>
+                                <li>Create a repository on Github with the following files:</li>
+                                    <ul>
+                                        <li>.gitignore (python);</li>
+                                        <li>readme.md;</li>
+                                        <li>license</li>
+                                    </ul>
+                                <li>This repository can be public or private (your choice).</li>
+                            </ol>    
+                        <h2>Firsts Steps</h2>
+                        <ol>
+                            <li>Create a project folder:</li>
+                                <div> 
+                                    <pre class="col-md-6 bg-dark rounded">
+                                        <code id="code" class="language-python">
+                                            $ mkdir path/folder_name  # Create a project folder
+                                        </code>
+                                    </pre>
+                                </div>
+                            <li>Create a virtual environment:</li>
+                                <div> 
+                                    <pre class="col-md-6 bg-dark rounded">
+                                        <code id="code" class="language-python">
+                                            $ python3.10 -m venv venv
+                                        </code>
+                                    </pre>
+                                </div>
+                            <li>Activate the virtual environment:</li>
+                                <div> 
+                                    <pre class="col-md-6 bg-dark rounded">
+                                        <code id="code" class="language-python">
+                                            $ source venv/bin/activate
+                                        </code>
+                                    </pre>
+                                </div>
+                            <li>Install Django:</li>
+                                <div> 
+                                    <pre class="col-md-6 bg-dark rounded">
+                                        <code id="code" class="language-python">
+                                            $ pip install django
+                                        </code>
+                                    </pre>
+                                </div>
+                            <li>Install PostgreSQL to use with Django:</li>
+                                <div> 
+                                    <pre class="col-md-6 bg-dark rounded">
+                                        <code id="code" class="language-python">
+                                            $ pip install psycopg2
+                                        </code>
+                                    </pre>
+                                </div>
+                                <ul>
+                                    <li>If you have an error (ubuntu):</li>
+                                        <div> 
+                                            <pre class="col-md-6 bg-dark rounded">
+                                                <code id="code" class="language-python">
+                                                    $ sudo apt-get install libpq-dev python3.10-dev
+                                                </code>
+                                            </pre>
+                                        </div>
+                                    <li>Install psycopg2 again</li>
+                                    <li>If you do not have PostgreSQL installed in your computer:</li>
+                                        <ul>
+                                            <li>Ubuntu: follow this <a href="https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-22-04-quickstart" target="_blank">tutorial</a>.</li>
+                                            <li>Windows: follow this <a href="https://www.postgresqltutorial.com/postgresql-getting-started/install-postgresql/" target="_blank">tutorial</a>.</li>
+                                            <li>MacOS: follow this <a href="https://www.postgresqltutorial.com/postgresql-getting-started/install-postgresql-macos/" target="_blank">tutorial</a>.</li>
+                                        </ul>
+                                </ul>
+                            <li>Install gunicorn:</li>
+                                <div> 
+                                    <pre class="col-md-6 bg-dark rounded">
+                                        <code id="code" class="language-python">
+                                            $ pip install gunicorn
+                                        </code>
+                                    </pre>
+                                </div>
+                            <li>Create a project:</li>
+                                <div> 
+                                    <pre class="col-md-6 bg-dark rounded">
+                                        <code id="code" class="language-python">
+                                            $ django-admin startproject project_name .
+                                        </code>
+                                    </pre>
+                                </div>
+                            <li>Create an app:</li>
+                                <div> 
+                                    <pre class="col-md-6 bg-dark rounded">
+                                        <code id="code" class="language-python">
+                                            $ python3.10 manage.py startapp app_name
+                                        </code>
+                                    </pre>
+                                </div>
+                            <li>Run the server:</li>
+                                <div> 
+                                    <pre class="col-md-6 bg-dark rounded">
+                                        <code id="code" class="language-python">
+                                            $ python3.10 manage.py runserver
+                                        </code>
+                                    </pre>
+                                </div>
+                            <li>Apply migrations:</li>
+                                <div> 
+                                    <pre class="col-md-6 bg-dark rounded">
+                                        <code id="code" class="language-python">
+                                            $ python3.10 manage.py migrate
+                                        </code>
+                                    </pre>
+                                </div>
+                            <li>Create a superuser:</li>
+                                <div> 
+                                    <pre class="col-md-6 bg-dark rounded">
+                                        <code id="code" class="language-python">
+                                            $ python3.10 manage.py createsuperuser
+                                        </code>
+                                    </pre>
+                                </div>
+                            <li>Install Heroku:</li>
+                                <div> 
+                                    <pre class="col-md-6 bg-dark rounded">
+                                        <code id="code" class="language-python">
+                                            $ sudo apt-get install heroku
+                                        </code>
+                                    </pre>
+                                </div>
+                            <li>Create a Procfile:</li>
+                                <div> 
+                                    <pre class="col-md-6 bg-dark rounded">
+                                        <code id="code" class="language-python"> 
+                                            $ touch Procfile
+                                            
+                                            # Include the following content in Procfile file
+                                            release: python3.10 manage.py migrate
+                                            web: gunicorn project.wsgi --log-file -
+                                        </code>
+                                    </pre>
+                                </div>
+                            <li>Create a runtime.txt:</li>
+                                <div> 
+                                    <pre class="col-md-6 bg-dark rounded">
+                                        <code id="code" class="language-python">
+                                        $ touch runtime.txt
+                                        
+                                        # Include the following content in runtext.txt file
+                                        python3.10.4
+                                        </code>
+                                    </pre>
+                                </div>
+                            <li>Create requirements.txt: </li>
+                                <div> 
+                                    <pre class="col-md-6 bg-dark rounded">
+                                        <code id="code" class="language-python"> 
+                                            $ touch requirements.txt
+                                            $ pip freeze > requirements.txt
+                                        </code>
+                                    </pre>
+                                </div>
+                            <li>Install django-environ:</li>
+                                <div> 
+                                    <pre class="col-md-6 bg-dark rounded">
+                                        <code id="code" class="language-python"> 
+                                            $ pip install django-environ
+                                        </code>
+                                    </pre>
+                                </div>
+                            <li>Create a .env file in the same directory as settings.py</li>
+                                <div> 
+                                    <pre class="col-md-6 bg-dark rounded">
+                                        <code id="code" class="language-python">
+                                            # Include the following content in .env file
+                                            SECRET_KEY=your_secret_key
+                                            DEBUG=True
+                                            ALLOWED_HOSTS=your_allowed_hosts
+                                            DATABASE_NAME=your_database_name
+                                            DATABASE_USERNAME=your_database_username
+                                            DATABASE_PASSWORD=your_database_password
+                                            DATABASE_HOST=your_database_host
+                                            DATABASE_PORT=your_database_port
+                                        </code>
+                                    </pre>
+                                </div>
+                        </ol>
+                        <h2>Project Folder</h2>
+                        <ol>
+                            <li>Configure settings.py</li>
+                                <div> 
+                                    <pre class="col-md-6 bg-dark rounded">
+                                        <code id="code" class="language-python">
+                                            # Include the following content in settings.py
+                                            
+                                            import environ
+                                            
+                                            INSTALLED_APPS = [
+                                                ...
+                                                'created_app' -> add the app that you create here
+                                            ]
+                                            
+                                            MIDDLEWARE = [
+                                                'django.middleware.security.SecurityMiddleware',
+                                                'whitenoise.middleware.WhiteNoiseMiddleware',
+                                                ...
+                                            ]
+                                            
+                                            TEMPLATES = [
+                                                ...
+                                                'DIRS': [os.path.join(BASE_DIR, 'templates')]
+                                            ]
+
+                                            DATABASES = {
+                                                'default': {
+                                                    'ENGINE': 'django.db.backends.postgresql',
+                                                    'NAME': env('DATABASE_NAME'),
+                                                    'USER': env('DATABASE_USERNAME'),
+                                                    'PASSWORD': env('DATABASE_PASSWORD'),
+                                                    'HOST': env('DATABASE_HOST'),
+                                                    'PORT': env('DATABASE_PORT')
+                                                }
+                                            }
+
+                                            LANGUAGE_CODE = 'pt-br'
+                                            
+                                            TIME_ZONE = 'America/Sao Paulo'
+
+                                            STATICFILES_DIRS = [
+                                                os.path.join(BASE_DIR, 'static'),
+                                            ]
+
+                                            STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+                                            STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+                                            MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+                                        </code>
+                                    </pre>
+                                </div>
+                            <li>Configure urls.py</li>
+                                <div> 
+                                    <pre class="col-md-6 bg-dark rounded">
+                                        <code id="code" class="language-python"> 
+                                            # Include the following content in urls.py
+                                            
+                                            ...
+                                            from django.urls import path, include
+                                            from django.conf.urls.static import static
+                                            from project import settings
+
+                                            urlpatterns = [
+                                                ...,
+                                                path('', include('app_name.urls'))
+                                            ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+                                        </code>
+                                    </pre>
+                                </div>
+                        </ol>                        
+                        <h2>App Folder</h2>
+                        <ol>
+                            <li>Create urls.py and configure</li>
+                                <div> 
+                                    <pre class="col-md-6 bg-dark rounded">
+                                        <code id="code" class="language-python"> 
+                                            # Include the following content in urls.py
+                                            
+                                            ...
+                                            from django.urls import path
+
+                                            urlpatterns = [
+                                                path('', views.function_name, name="function_name"),
+                                            ]
+                                        </code>
+                                    </pre>
+                                </div>
+                            <li>Configure views.py</li>
+                                <div> 
+                                    <pre class="col-md-6 bg-dark rounded">
+                                        <code id="code" class="language-python"> 
+                                            # Include the following content in views.py
+                                            
+                                            def function_name(request):
+                                                return render(request, 'page_name.html')
+                                        </code>
+                                    </pre>
+                                </div>
+                        </ol>
+                        <h2>Git</h2>
+                        <ol>
+                            <li>Send files to Github repository:</li>
+                                <div> 
+                                    <pre class="col-md-6 bg-dark rounded">
+                                        <code id="code" class="language-python">
+                                            $ git remote add origin https://github.com/user/repo.git
+                                            $ git add .
+                                            $ git commit - "first commit"
+                                            $ git push origin main
+                                        </code>
+                                    </pre>
+                                </div>
+                        </ol>
+                        <h2>Heroku</h2>
+                        <ol>
+                            <li>Login in Heroku:</li>
+                                <div> 
+                                    <pre class="col-md-6 bg-dark rounded">
+                                        <code id="code" class="language-python"> 
+                                            $ heroku login
+                                        </code>
+                                    </pre>
+                                </div>
+                            <li>Create an app in Heroku:</li>
+                                <div> 
+                                    <pre class="col-md-6 bg-dark rounded">
+                                        <code id="code" class="language-python"> 
+                                            $ heroku create app_name
+                                        </code>
+                                    </pre>
+                                </div>
+                            <li>Heroku website:</li>
+                                <ul>
+                                    <li>Settings -> Add buildpack -> Python</li>
+                                </ul>
+                            <li>Create a PostgreSQL addon:</li>
+                                <div> 
+                                    <pre class="col-md-6 bg-dark rounded">
+                                        <code id="code" class="language-python"> 
+                                            $ create heroku-postgresqk:hobby-dev  # Free plan
+                                        </code>
+                                    </pre>
+                                </div>
+                            <li>Configure env information in Heroku:</li>
+                                <div> 
+                                    <pre class="col-md-6 bg-dark rounded">
+                                        <code id="code" class="language-python">
+                                            $ heroku config:set SECRET_KEY=your_secret_key
+                                            $ heroku config:set DEBUG=False
+                                            $ heroku config:set ALLOWED_HOSTS=your_allowed_hosts_heroku
+                                            $ heroku config:set DATABASE_NAME=your_database_name_heroku
+                                            $ heroku config:set DATABASE_USERNAME=your_database_username_heroku
+                                            $ heroku config:set DATABASE_PASSWORD=your_database_password_heroku
+                                            $ heroku config:set DATABASE_HOST=your_database_host_heroku
+                                            $ heroku config:set DATABASE_PORT=your_database_port_heroku
+                                        </code>
+                                    </pre>
+                                </div>
+                            <li>Create a superuser:</li>
+                                <div> 
+                                    <pre class="col-md-6 bg-dark rounded">
+                                        <code id="code" class="language-python"> 
+                                            $ heroku run python manage.py createsuperuser
+                                        </code>
+                                    </pre>
+                                </div>
+                            <li>Deploy on Heroku</li>
+                                <div> 
+                                    <pre class="col-md-6 bg-dark rounded">
+                                        <code id="code" class="language-python">
+                                            $ heroku git:remote -a heroku-app-name
+                                            $ git add .
+                                            $ git commit -am "make it better"
+                                            $ git push heroku main
+                                        </code>
+                                    </pre>
+                                </div>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Comment Section -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 pt-2">
+                    <div class="pb-3 text-center">
+                        <p>If do you have any questions or find any errors, leave a comment below and I'll get back to you as soon as possible.</p>
+                    </div>
+                    
+                    <div id="disqus_thread"></div>
+                        <script>
+                            (function() { // DON'T EDIT BELOW THIS LINE
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://devpythonbr-django.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                            })();
+                        </script>
+                        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container-fluid bg-dark">
+            <div class="row">
+                <div class="col-md-12 p-4 text-white text-center">
+                    <p>&copy; 2022 <a href="http://www.devpythonbr.com.br/" target="_blank">DevPythonBr</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    {% include 'includes/scripts.html' %}
+</body>
+
+</html>

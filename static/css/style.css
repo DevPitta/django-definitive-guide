@@ -1,0 +1,33 @@
+.bg-dark-green {
+    background: rgba(16, 62, 46, 1);
+}
+
+.devpythonbr-link {
+    color: white;
+}
+
+.devpythonbr-link:hover {
+    color: orangered;
+}
+
+.social-medias a{
+    color: black;
+}
+
+.social-medias a:hover {
+    color: white;
+    position: relative;
+    top: -5px;
+}
+
+.image-django {
+    width: 220px;
+    margin: auto;
+    display: block;
+}
+
+.image-devpythonbr {
+    width: 160px;
+    margin: auto;
+    display: block;
+}
