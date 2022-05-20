@@ -271,6 +271,8 @@
                                             import os
                                             import environ
                                             
+                                            env = environ.Env()
+
                                             environ.Env.read_env(os.path.join(BASE_DIR, 'project/.env'))
 
                                             SECRET_KEY = env('SECRET_KEY')
