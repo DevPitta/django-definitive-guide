@@ -155,6 +155,14 @@
                                         </code>
                                     </pre>
                                 </div>
+                            <li>Install whitenoise:</li>
+                                <div> 
+                                    <pre class="col-md-6 bg-dark rounded">
+                                        <code id="code" class="language-python">
+                                            $ pip install whitenoise
+                                        </code>
+                                    </pre>
+                                </div>
                             <li>Create a project:</li>
                                 <div> 
                                     <pre class="col-md-6 bg-dark rounded">
@@ -342,6 +350,25 @@
                                         </code>
                                     </pre>
                                 </div>
+                            <li>Configure wsgi.py</li>
+                                <div> 
+                                    <pre class="col-md-6 bg-dark rounded">
+                                        <code id="code" class="language-python"> 
+                                            # Include the following content in wsgi.py
+                                            
+                                            ...
+                                            from django.conf import settings
+                                            from django.contrib.staticfiles.handlers import StaticFilesHandler
+
+                                            ...
+                                            if settings.DEBUG:
+                                                application = StaticFilesHandler(get_wsgi_application())
+                                            else:
+                                                application = get_wsgi_application()
+                                        </code>
+                                    </pre>
+                                </div>
+                                
                         </ol>                        
                         <h2>App Folder</h2>
                         <ol>
