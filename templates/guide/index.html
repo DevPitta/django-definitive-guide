@@ -268,8 +268,17 @@
                                         <code id="code" class="language-python">
                                             # Include the following content in settings.py
                                             
+                                            import os
                                             import environ
                                             
+                                            environ.Env.read_env(os.path.join(BASE_DIR, 'project/.env'))
+
+                                            SECRET_KEY = env('SECRET_KEY')
+
+                                            DEBUG = env.bool('DEBUG', False)
+
+                                            ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
+
                                             INSTALLED_APPS = [
                                                 ...
                                                 'created_app' -> add the app that you create here
